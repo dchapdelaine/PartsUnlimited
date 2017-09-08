@@ -1,0 +1,52 @@
+﻿{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "WebsiteName": {
+            "value": "dchpartsunlimited"
+        },
+        "PartsUnlimitedServerName": {
+            "value": "dchpartsunlimitedsql"
+        },
+        "PartsUnlimitedHostingPlanName": {
+            "value": "dchpartsunlimited"
+        },
+        "CdnStorageAccountName": {
+            "value": ""
+        },
+        "CdnStorageContainerName": {
+            "value": ""
+        },
+        "CdnStorageAccountNameForDev": {
+            "value": ""
+        },
+        "CdnStorageContainerNameForDev": {
+            "value": ""
+        },
+        "CdnStorageAccountNameForStaging": {
+            "value": ""
+        },
+        "CdnStorageContainerNameForStaging": {
+            "value": ""
+        },
+        "PartsUnlimitedServerAdminLogin": {
+            "value": "cloudadmin"
+        },
+        "PartsUnlimitedServerAdminLoginPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/40ae288a-dac8-43ad-a259-2cb186511ac8/resourceGroups/eastusKeyVault/providers/Microsoft.KeyVault/vaults/dcheastuskeyvault"
+                },
+                "secretName": "default-password"
+            }
+        },
+        "PartsUnlimitedServerAdminLoginPasswordForTest": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/40ae288a-dac8-43ad-a259-2cb186511ac8/resourceGroups/eastusKeyVault/providers/Microsoft.KeyVault/vaults/dcheastuskeyvault"
+                },
+                "secretName": "default-password"
+            }
+        }
+    }
+}
