@@ -15,14 +15,14 @@ namespace PartsUnlimited.Controllers
     {
         private readonly IOrdersQuery _ordersQuery;
         private readonly ITelemetryProvider _telemetry;
-		private readonly IShippingTaxCalculator _shippingTaxCalc;
+        private readonly IShippingTaxCalculator _shippingTaxCalc;
 
-		public OrdersController(IOrdersQuery ordersQuery, ITelemetryProvider telemetryProvider,
-			IShippingTaxCalculator shippingTaxCalc)
+        public OrdersController(IOrdersQuery ordersQuery, ITelemetryProvider telemetryProvider,
+            IShippingTaxCalculator shippingTaxCalc)
         {
             _ordersQuery = ordersQuery;
             _telemetry = telemetryProvider;
-			_shippingTaxCalc = shippingTaxCalc;
+            _shippingTaxCalc = shippingTaxCalc;
         }
 
         public async Task<ActionResult> Index(DateTime? start, DateTime? end, string invalidOrderSearch)
@@ -34,7 +34,6 @@ namespace PartsUnlimited.Controllers
 
         public async Task<ActionResult> Details(int? id)
         {
-            await Task.Delay(5000);
             if (id == null)
             {
                 _telemetry.TrackTrace("Order/Server/NullId");
@@ -76,18 +75,18 @@ namespace PartsUnlimited.Controllers
                 };
                 _telemetry.TrackEvent("Order/Server/Details", eventProperties, eventMeasurements);
 
-				costSummary = _shippingTaxCalc.CalculateCost(order.OrderDetails, order.PostalCode);
-				//var itemsCount = order.OrderDetails.Sum(x => x.Count);
-				//var subTotal = order.OrderDetails.Sum(x => x.Count * x.Product.Price);
-				//var shipping = itemsCount * (decimal)6.00;
-				//var tax = (subTotal + shipping) * (decimal)0.06;
-				//var total = subTotal + shipping + tax;
+                costSummary = _shippingTaxCalc.CalculateCost(order.OrderDetails, order.PostalCode);
+                //var itemsCount = order.OrderDetails.Sum(x => x.Count);
+                //var subTotal = order.OrderDetails.Sum(x => x.Count * x.Product.Price);
+                //var shipping = itemsCount * (decimal)6.00;
+                //var tax = (subTotal + shipping) * (decimal)0.06;
+                //var total = subTotal + shipping + tax;
 
-				//costSummary.CartSubTotal = subTotal.ToString("C");
-				//costSummary.CartShipping = shipping.ToString("C");
-				//costSummary.CartTax = tax.ToString("C");
-				//costSummary.CartTotal = total.ToString("C");
-			}
+                //costSummary.CartSubTotal = subTotal.ToString("C");
+                //costSummary.CartShipping = shipping.ToString("C");
+                //costSummary.CartTax = tax.ToString("C");
+                //costSummary.CartTotal = total.ToString("C");
+            }
 
             var viewModel = new OrderDetailsViewModel
             {
