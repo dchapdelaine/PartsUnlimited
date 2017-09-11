@@ -60,24 +60,6 @@
             "type": "bool",
             "defaultValue": false
         },
-        "CdnStorageAccountName": {
-            "type": "string"
-        },
-        "CdnStorageContainerName": {
-            "type": "string"
-        },
-        "CdnStorageAccountNameForDev": {
-            "type": "string"
-        },
-        "CdnStorageContainerNameForDev": {
-            "type": "string"
-        },
-        "CdnStorageAccountNameForStaging": {
-            "type": "string"
-        },
-        "CdnStorageContainerNameForStaging": {
-            "type": "string"
-        },
         "_artifactsLocation": {
             "type": "string"
         },

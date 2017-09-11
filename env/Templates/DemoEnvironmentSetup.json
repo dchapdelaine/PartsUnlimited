@@ -60,12 +60,6 @@
             "type": "bool",
             "defaultValue": false
         },
-        "CdnStorageAccountName": {
-            "type": "string"
-        },
-        "CdnStorageContainerName": {
-            "type": "string"
-        },
         "_artifactsLocation": {
             "type": "string"
         },

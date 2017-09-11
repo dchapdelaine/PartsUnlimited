@@ -11,12 +11,6 @@
         "PartsUnlimitedHostingPlanName": {
             "value": "PartsBasicFree"
         },
-        "CdnStorageAccountName": {
-            "value": ""
-        },
-        "CdnStorageContainerName": {
-            "value": "cdn"
-        },
         "PartsUnlimitedServerAdminLoginPassword": {
             "value": ""
         }

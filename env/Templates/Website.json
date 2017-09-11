@@ -49,7 +49,7 @@
                         "[resourceId('Microsoft.Web/sites', parameters('WebsiteName'))]"
                     ],
                     "properties": {
-                        "Keys:ApplicationInsights:InstrumentationKey": "[parameters('AppInsightsKey')]"
+                        "APPINSIGHTS_INSTRUMENTATIONKEY": "[parameters('AppInsightsKey')]"
                     }
                 },
                 {
@@ -61,7 +61,7 @@
                     ],
                     "properties": {
                         "connectionStringNames": [ "defaultConnection" ],
-                        "appSettingNames": [ "keys:ApplicationInsights:InstrumentationKey" ]
+                        "appSettingNames": [ "APPINSIGHTS_INSTRUMENTATIONKEY" ]
                     }
                 }
             ]

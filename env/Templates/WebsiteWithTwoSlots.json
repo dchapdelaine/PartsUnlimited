@@ -61,7 +61,7 @@
                         "[resourceId('Microsoft.Web/sites', parameters('WebsiteName'))]"
                     ],
                     "properties": {
-                        "Keys:ApplicationInsights:InstrumentationKey": "[parameters('AppInsightsKey')]"
+                        "APPINSIGHTS_INSTRUMENTATIONKEY": "[parameters('AppInsightsKey')]"
                     }
                 },
                 {
@@ -73,7 +73,7 @@
                     ],
                     "properties": {
                         "connectionStringNames": [ "defaultConnection" ],
-                        "appSettingNames": [ "keys:ApplicationInsights:InstrumentationKey" ]
+                        "appSettingNames": [ "APPINSIGHTS_INSTRUMENTATIONKEY" ]
                     }
                 },
                 {
@@ -106,7 +106,7 @@
                                 "[resourceId('Microsoft.Web/sites/slots', parameters('WebsiteName'), 'Dev')]"
                             ],
                             "properties": {
-                                "Keys:ApplicationInsights:InstrumentationKey": "[parameters('DevSlotAppInsightsKey')]"
+                                "APPINSIGHTS_INSTRUMENTATIONKEY": "[parameters('DevSlotAppInsightsKey')]"
                             }
                         }
                     ]
@@ -141,7 +141,7 @@
                                 "[resourceId('Microsoft.Web/sites/slots', parameters('WebsiteName'), 'Staging')]"
                             ],
                             "properties": {
-                                "Keys:ApplicationInsights:InstrumentationKey": "[parameters('StageSlotAppInsightsKey')]"
+                                "APPINSIGHTS_INSTRUMENTATIONKEY": "[parameters('StageSlotAppInsightsKey')]"
                             }
                         }
                     ]
