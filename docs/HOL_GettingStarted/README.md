@@ -19,7 +19,11 @@ Here is the step by step guide to deploy this virtual machine.
 
 - Open the [Azure Portal](https://portal.azure.com)
 - Press the New button on the top left to deploy a new Azure Resource
+
+  ![](images/NewAzureResource.png)
 - Search for "Visual Studio Community 2017" and then press enter to filter.
+
+  ![](images/SearchForVS2017.png)
 - Select Visual Studio Community 2017 (latest release) on Windows 10 Enterprise N (x64)
 - Follow the creation wizard. Since the machine will be up for only a few hours, I suggest provisioning a beefy one to get the best performances.
 
@@ -28,20 +32,95 @@ Here is the step by step guide to deploy this virtual machine.
 Here are the tools that should be installed:
 
 - Visual Studio Community 2017 which can be downloaded [here](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15)
-- Run the installer and make sure to select ".NET Desktop Development", "ASP.NET and web development tools" and "Azure development"
+- Run the installer and make sure to select ".NET Desktop Development", "ASP.NET and web development tools" and "Azure development". This will ensure that you have all the required components including SQL Serer Express installed.
 
+  ![](images/VSInstallation.png)
 
+## Tasks Overview
 
+### Clone the repository
 
+ In this step, you will clone the source code repository from Github using Visual Studio. You will also checkout the aspnet45 branch where the relevant code is located.
 
+- Open Visual Studio 2017 and open the Team Explorer.
+- Select the manage connection button
 
+  ![](images/manageconnections.png)
+- Enter https://github.com/dchapdelaine/PartsUnlimited.git as the URL of the repo. Press clone to initiate the cloning.
+- Once the cloning has completed, change the current branch to aspnet45. To do so, select the "master" branch at the lower right of the screen and then select the manage branches menu.
 
+  ![](images/branchesselection.png)
+- Expand the "remotes/origin" node and then double-click on "aspnet45"
 
-### Tasks Overview: ###
+> Note: This could also be done with git on the commandline. You would run:
+> ```bat
+> git clone https://github.com/dchapdelaine/PartsUnlimited.git
+> cd PartsUnlimited
+> git checkout aspnet45
+> ```
 
-**1. Import Source Code into your VSTS Account:** In this step, you will connect your own Visual Studio Team Services account, download the PartsUnlimited source code, and then push it to your own Visual Studio Team Services account. There are two approaches to doing this: a) Use the Git command line, or b) Use Visual Studio.  
+### Build and run locally
 
-> Note: VSTS does support GitHub source code integration for use with VSTS builds, but is outside of the scope of this HOL
+Now that we have cloned the source code, we can open the solution, build it and then run it!
+
+- Open the solution file. You can do so by simply going back to the Solution Explorer view and clicking the highlighted button in the screenshot.
+
+  ![](images/OpenSolution.png)
+- You can then start your web application by pressing F5. The application will take a minute to start as it builds and initialize the database.
+
+![](images/PartsUnlimited.png)
+
+### Manually deploy the environment in Azure
+
+Now that we know that our application runs well locally, we can move to deploying it to Azure. Before we think about deploying it, we must create the environment in Azure that will host our application.
+
+- Go to the Azure Portal [here](https://portal.azure.com) and sign in with your Azure credentials. 
+- Create a resource group that will contain all the Azure services related to our deployment. Whenver we need to deploy resources from now on, we will pick this resource group as the target.
+  - Select the resource group tab on the left as shown below.
+
+    ![](images/SelectRG.png)
+  - Add a new resource group by pressing the Add button as shown below and the following the wizard.
+
+    ![](images/NewRG.png)
+- Deploy an Azure Web App as the host of our deployment. We will use a slightly difference way than what was shwon for resource group creation.
+  - Press the new button on the top left as shown below.
+
+    ![](images/NewAzureResource.png)
+  - Select Web + Mobile and then Web App as shown below.
+
+    ![](images/NewWebApp.png)
+  - Fill in the form for the creation of the Web App. Make sure to reuse the resouce group that you have created previously and also to select "On" for Application Insights creation since we will leverage it later on to monitor our application.
+
+    ![](images/WebAppWizard.png)
+
+    Create a new App Service Plan that will define the compute resources that will power your Web App. Press the Create New button to open the App Service Plan creation wizard. For our needs, you can select any pricing tier except Isolated. Don't hesitate to pick beefier tiers since the Web App will be deleted after we are done with it. Make sure that the location matches the one from the resource group as we want to colocate our resources to minimize the latency. Press OK to return to the Web App creation wizard.
+
+    ![](images/NewAppServicePlan.png)
+  - Press Create to launch the creation of the resource. This will take a short moment to complete. You can continue to the next step while it completes.
+- It is now time to create the Azure SQL Database that will serve has the datastore for our Web App.
+  - Press the new button on the top left as shown below.
+
+    ![](images/NewAzureResource.png)
+  - Select Databases and then SQL Database as shown below.
+
+    ![](images/NewDatabase.png)
+  - Follow the creation wizard and fill in the parameters as shown below. A Basic tier database will suffice for our needs, but feel free to pick a larger one for more performance. Select the same resource group as we have been working with. As part of the creation, you will have to create a new Database Server. The name will have to be unique. Double check that the server is deployed in the same location as the Web App to ensure minimal latency and to avoid being charged for outbound data transfer!
+
+    ![](images/DatabaseWizard.png)
+    > Note: Later on, you can leverage the credentials that you have just added to connect with SQL Management Studio. To do that you will first have to whitelist your public IP in the SQL Server settings in the Azure Portal.
+  - Press the Create button to launch the database creation. It will take a short moment to complete.
+
+### Programatically deploying the environment in Azure
+
+Now that you have seen how to deploy resources to Azure with the Azure Portal, we will levage Azure Resource Manager templates to programatically deploy the same resources. You will notice how it makes it easier to deploy identical environment for development, testing, production, etc...
+
+- In the Solution Explorer, expand the "env" solution folder and right click the PartsUnlimitedEnv project. Select Deploy->New... as shown below
+
+  ![](images/NewDeploymentVS.png)
+- Follow the deployment wizard and fill in the parameters as shown below. In the Resource Group field, make sure that you create a new one and don't deploy on top of our previous deployment.
+
+  ![](images/DeployWizard.png)
+- Press the Deploy button to move forward and open the configuration parameters of the deployment.
 
 **2. Create Continuous Integration Build:** In this step, you will create a build definition that will be triggered every time a commit is pushed to your repository in Visual Studio Team Services.
 
