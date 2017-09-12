@@ -46,44 +46,37 @@ Here are the tools that should be installed:
 - Select the manage connection button
 
   ![](images/ManageConnections.png)
-- Enter https://github.com/dchapdelaine/PartsUnlimited.git as the URL of the repo. Press clone to initiate the cloning as shown below.
+- Enter `https://github.com/dchapdelaine/PartsUnlimited.git` as the URL of the repo. Press clone to initiate the cloning as shown below.
   ![](images/CloneMenu.png)
-- Once the cloning has completed, change the current branch to aspnet45. To do so, select the "master" branch at the lower right of the screen and then select the manage branches menu.
-
-  ![](images/BranchesSelection.png)
-- Expand the "remotes/origin" node and then double-click on "aspnet45"
-
-> Note: This could also be done with git on the commandline. You would run:
-> ```bat
-> git clone https://github.com/dchapdelaine/PartsUnlimited.git
-> cd PartsUnlimited
-> git checkout aspnet45
-> ```
+  > Note: This could also be done with git on the commandline. You would run:
+  > ```bat
+  > git clone https://github.com/dchapdelaine/PartsUnlimited.git
+  > ```
 
 ### Build and run locally
 
-Now that we have cloned the source code, we can open the solution, build it and then run it!
+Now that we have cloned the source code, we are ready to open the solution, build it and then run it!
 
 - Open the solution file. You can do so by simply going back to the Solution Explorer view and clicking the highlighted button in the screenshot.
 
   ![](images/OpenSolution.png)
-- You can then start your web application by pressing F5. The application will take a minute to start as it builds and initialize the database.
+- You can then start your web application by pressing F5. The application will take a minute to start as it builds and initializes the database.
 
 ![](images/PartsUnlimited.png)
 
 ### Manually deploy the environment in Azure
 
-Now that we know that our application runs well locally, we can move to deploying it to Azure. Before we think about deploying it, we must create the environment in Azure that will host our application.
+Now that we know that our application runs locally, we can move to deploying it to Azure. Before we think about deploying it though, we must create the environment in Azure that will host our application.
 
-- Go to the Azure Portal [here](https://portal.azure.com) and sign in with your Azure credentials. 
-- Create a resource group that will contain all the Azure services related to our deployment. Whenver we need to deploy resources from now on, we will pick this resource group as the target.
+- Go to the Azure Portal [here](https://portal.azure.com) and sign in with your Azure credentials.
+- Create a resource group that will contain all the Azure services related to our deployment. Whenver we need to deploy resources for this manual deployment step, we will pick this resource group as the target.
   - Select the resource group tab on the left as shown below.
 
     ![](images/SelectRG.png)
   - Add a new resource group by pressing the Add button as shown below and the following the wizard.
 
     ![](images/NewRG.png)
-- Deploy an Azure Web App as the host of our deployment. We will use a slightly difference way than what was shwon for resource group creation.
+- We will now deploy an Azure Web App as the host of our deployment. We will use a slightly difference method than what was shown for resource group creation.
   - Press the new button on the top left as shown below.
 
     ![](images/NewAzureResource.png)
