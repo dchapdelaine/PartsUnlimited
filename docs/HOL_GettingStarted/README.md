@@ -45,11 +45,11 @@ Here are the tools that should be installed:
 - Open Visual Studio 2017 and open the Team Explorer.
 - Select the manage connection button
 
-  ![](images/manageconnections.png)
+  ![](images/ManageConnections.png)
 - Enter https://github.com/dchapdelaine/PartsUnlimited.git as the URL of the repo. Press clone to initiate the cloning.
 - Once the cloning has completed, change the current branch to aspnet45. To do so, select the "master" branch at the lower right of the screen and then select the manage branches menu.
 
-  ![](images/branchesselection.png)
+  ![](images/BranchesSelection.png)
 - Expand the "remotes/origin" node and then double-click on "aspnet45"
 
 > Note: This could also be done with git on the commandline. You would run:
