@@ -38,7 +38,7 @@
                         "[concat('Microsoft.Web/sites/', parameters('WebsiteName'))]"
                     ],
                     "properties": {
-                        "DefaultConnection": { "value": "[parameters('DatabaseConnectionString')]", "type": "SQLAzure" }
+                        "DefaultConnectionString": { "value": "[parameters('DatabaseConnectionString')]", "type": "SQLAzure" }
                     }
                 },
                 {
@@ -60,7 +60,7 @@
                         "[resourceId('Microsoft.Web/sites', parameters('WebsiteName'))]"
                     ],
                     "properties": {
-                        "connectionStringNames": [ "defaultConnection" ],
+                        "connectionStringNames": [ "DefaultConnectionString" ],
                         "appSettingNames": [ "APPINSIGHTS_INSTRUMENTATIONKEY" ]
                     }
                 }

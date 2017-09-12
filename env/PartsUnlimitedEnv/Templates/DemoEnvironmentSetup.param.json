@@ -9,7 +9,7 @@
             "value": "dchpartsunlimitedmsdn"
         },
         "PartsUnlimitedHostingPlanName": {
-            "value": "PartsBasicFree"
+            "value": "PartsUnlimitedPlan"
         },
       "PartsUnlimitedServerAdminLogin": {
         "value": "cloudadmin"
