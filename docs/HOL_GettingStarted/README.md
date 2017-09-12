@@ -1,8 +1,6 @@
 # HOL - Get started with web app development in Azure
 
-In this lab we have an application called PartsUnlimited. We want to setup in Azure
-an environment where we can deploy this application. In addition to that, we want
-to monitor, update, scale, debug, etc...
+In this lab we will see how we can leverage Azure services to easily publish an application with Visual Studio in an environment that was either manually created in the Azure Portal or deployed with Azure Resource Manager templates.
 
 ## Pre-requisites
 
@@ -25,18 +23,20 @@ Here is the step by step guide to deploy this virtual machine.
 
   ![](images/SearchForVS2017.png)
 - Select Visual Studio Community 2017 (latest release) on Windows 10 Enterprise N (x64)
+  > This image is only available in Dev/Test enabled Azure subscriptions (such has MSDN subscriptions). If it is not available for you, you can pick "Visual Studio Community 2017 (latest release) on Windows Server 2016 (x64)" instead which will also work fine.
 - Follow the creation wizard. Since the machine will be up for only a few hours, I suggest provisioning a beefy one to get the best performances.
+  > I suggest that in the creation wizard that you select an appropriate auto shutdown time to avoid forgetting about your VM and burn through your credits.
 
 ### Option 2: Configure your own environment
 
 Here are the tools that should be installed:
 
 - Visual Studio Community 2017 which can be downloaded [here](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15)
-- Run the installer and make sure to select ".NET Desktop Development", "ASP.NET and web development tools" and "Azure development". This will ensure that you have all the required components including SQL Serer Express installed.
+- Run the installer and make sure to select ".NET Desktop Development", "ASP.NET and web development tools" and "Azure development". This will ensure that you have all the required components including SQL Server Express installed.
 
   ![](images/VSInstallation.png)
 
-## Tasks Overview
+## Let's get started
 
 ### Clone the repository
 
@@ -46,7 +46,8 @@ Here are the tools that should be installed:
 - Select the manage connection button
 
   ![](images/ManageConnections.png)
-- Enter https://github.com/dchapdelaine/PartsUnlimited.git as the URL of the repo. Press clone to initiate the cloning.
+- Enter https://github.com/dchapdelaine/PartsUnlimited.git as the URL of the repo. Press clone to initiate the cloning as shown below.
+  ![](images/CloneMenu.png)
 - Once the cloning has completed, change the current branch to aspnet45. To do so, select the "master" branch at the lower right of the screen and then select the manage branches menu.
 
   ![](images/BranchesSelection.png)
