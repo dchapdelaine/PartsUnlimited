@@ -3,22 +3,19 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "WebsiteName": {
-            "value": ""
+            "value": "dchpartsmsdn"
         },
         "PartsUnlimitedServerName": {
-            "value": ""
+            "value": "dchpartsunlimitedmsdn"
         },
         "PartsUnlimitedHostingPlanName": {
-            "value": "PartsBasicFree"
+            "value": "PartsUnlimitedPlan"
         },
-        "CdnStorageAccountName": {
-            "value": ""
-        },
-        "CdnStorageContainerName": {
-            "value": "cdn"
-        },
-        "PartsUnlimitedServerAdminLoginPassword": {
-            "value": ""
-        }
+      "PartsUnlimitedServerAdminLogin": {
+        "value": "cloudadmin"
+      },
+      "PartsUnlimitedHostingPlanSKU": {
+        "value": "Standard"
+      }
     }
 }

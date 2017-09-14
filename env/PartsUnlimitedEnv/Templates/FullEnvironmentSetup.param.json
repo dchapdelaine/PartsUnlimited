@@ -11,24 +11,6 @@
         "PartsUnlimitedHostingPlanName": {
             "value": "dchpartsunlimited"
         },
-        "CdnStorageAccountName": {
-            "value": ""
-        },
-        "CdnStorageContainerName": {
-            "value": ""
-        },
-        "CdnStorageAccountNameForDev": {
-            "value": ""
-        },
-        "CdnStorageContainerNameForDev": {
-            "value": ""
-        },
-        "CdnStorageAccountNameForStaging": {
-            "value": ""
-        },
-        "CdnStorageContainerNameForStaging": {
-            "value": ""
-        },
         "PartsUnlimitedServerAdminLogin": {
             "value": "cloudadmin"
         },

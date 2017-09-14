@@ -29,14 +29,12 @@
       <Visible>False</Visible>
     </None>
     <Content Include="Deploy-AzureResourceGroup.ps1" />
-    <Content Include="Templates\AppInsights.json" />
-    <Content Include="Templates\CodedUI-DevTestLab.json" />
     <Content Include="Templates\DemoEnvironmentSetup.json" />
     <Content Include="Templates\DemoEnvironmentSetup.param.json" />
     <Content Include="Templates\FullEnvironmentSetup.json" />
     <Content Include="Templates\FullEnvironmentSetup.param.json" />
-    <Content Include="Templates\FullEnvironmentSetupMerged.json" />
-    <Content Include="Templates\FullEnvironmentSetupMerged.param.json" />
+    <Content Include="Templates\AppInsights.json" />
+    <Content Include="Templates\CodedUI-DevTestLab.json" />
     <Content Include="Templates\HostingPlanAndRules.json" />
     <Content Include="Templates\SqlServerAndDb.json" />
     <Content Include="Templates\Website.json" />

@@ -72,7 +72,7 @@
                         "[resourceId('Microsoft.Web/sites', parameters('WebsiteName'))]"
                     ],
                     "properties": {
-                        "connectionStringNames": [ "defaultConnection" ],
+                        "connectionStringNames": [ "DefaultConnectionString" ],
                         "appSettingNames": [ "APPINSIGHTS_INSTRUMENTATIONKEY" ]
                     }
                 },

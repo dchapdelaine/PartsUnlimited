@@ -10,24 +10,6 @@
         },
         "PartsUnlimitedHostingPlanName": {
             "value": "cdrm-pu2-plan"
-        },
-        "CdnStorageAccountName": {
-            "value": "cdrm-pu2-store"
-        },
-        "CdnStorageContainerName": {
-            "value": "cdrm-pu2-container"
-        },
-        "CdnStorageAccountNameForDev": {
-            "value": "cdrm-pu2-store-dev"
-        },
-        "CdnStorageContainerNameForDev": {
-            "value": "cdrm-pu2-container-dev"
-        },
-        "CdnStorageAccountNameForStaging": {
-            "value": "cdrm-pu2-store-stage"
-        },
-        "CdnStorageContainerNameForStaging": {
-            "value": "cdrm-pu2-container-stage"
         }
     }
 }
