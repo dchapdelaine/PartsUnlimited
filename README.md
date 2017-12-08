@@ -4,7 +4,7 @@ Parts Unlimited is an example eCommerce website site based for training purposes
 
 To read more about this project, please view the [Getting Started docs](docs/GettingStarted.md). The website includes product listings by category, product details, shopping cart, order history, product recommendations, search, and more.  To get started learning about building and managing the site, visit the Parts Unlimited docs for hands-on labs. 
 
-## Key Features##
+## Key Features ##
 - Works with Visual Studio 2013 Update 4 (other versions may work but not tested)
 - Uses ASP.NET 4.5
 - Modern HTML5 responsive layout using bootstrap for mobile, tablet, and PC
