@@ -1,8 +1,0 @@
-* [[Understanding the Azure App Service file system]]
-* [[Full stopping a Web App]]
-* [[Creating a slot using Resource Explorer]]
-* [[Understanding site swaps]]
-* [[Deploying Perl apps]]
-* [[Investigating msdeploy ARM failures]]
-* [[Admin site]]
-* [[MySQL in-app]]
