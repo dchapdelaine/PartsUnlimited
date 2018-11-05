@@ -345,6 +345,7 @@
     <None Include="Properties\PublishProfiles\dchpartsmsdn - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\dchpartsunlimited - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\dchpartsunlimited-Dev - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\dchpartsunlimited-Staging - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\partsunlimited-vcurrent.pubxml" />
     <None Include="Properties\PublishProfiles\partsunlimitedcus07.pubxml" />
     <Content Include="Images\admin_icon.png" />
